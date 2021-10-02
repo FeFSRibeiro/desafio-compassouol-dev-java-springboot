@@ -1,6 +1,8 @@
 package com.github.fefsribeiro.desafio.service;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -31,6 +33,31 @@ public class ProductService {
 	public Product toSave(ProductFormDto dto) {
 		Product p = modelMapper.map(dto, Product.class);
 		return productRepository.save(p);
-		 
+		
 	}
+	
+	
+	public Optional<Product> toFindById(String id) {
+		return productRepository.findById(id);
+	}
+	
+	public Optional<Product> toUpdateById(ProductFormDto dto, String id ){
+		Product p = modelMapper.map(dto, Product.class);
+		p.setId(id);
+		return Optional.of(productRepository.save(p));
+	}
+	
+	public void toDeleteById(String id){
+		productRepository.deleteById(id);
+	}
+	
+	public List<ProductDto> toListBySearch(String q, BigDecimal minPrice, BigDecimal maxPrice) {
+		List<Product> products = productRepository.findProductByNameOrDescriptionAndMinAndMaxPrice(q,minPrice, maxPrice);
+		return products
+				.stream()
+				.map(p -> modelMapper.map(p, ProductDto.class))
+				.collect(Collectors.toList());
+	}
+	
+	
 }

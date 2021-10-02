@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 import lombok.Getter;
@@ -20,5 +21,6 @@ public class ProductFormDto {
 	private String description;
 	@Positive
 	@Digits(integer = 10, fraction=2)
+	@NotNull
 	private BigDecimal price;
 }
