@@ -11,7 +11,7 @@ import com.github.fefsribeiro.desafio.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product, String> {
 
-	@Query("SELECT p FROM Product p WHERE p.description LIKE %:q% OR p.name LIKE %:q% AND p.price BETWEEN :minPrice AND :maxPrice")
+	@Query("SELECT p FROM Product p WHERE p.description= :q OR p.name= :q AND p.price BETWEEN :minPrice AND :maxPrice")
 	List<Product> findProductByNameOrDescriptionAndMinAndMaxPrice(@Param("q") String q,
 																  @Param("minPrice") BigDecimal minPrice, 
 																  @Param("maxPrice") BigDecimal maxPrice);

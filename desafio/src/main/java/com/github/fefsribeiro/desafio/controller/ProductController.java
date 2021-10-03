@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.fefsribeiro.desafio.dto.ProductDto;
 import com.github.fefsribeiro.desafio.dto.ProductFormDto;
-import com.github.fefsribeiro.desafio.model.Product;
 import com.github.fefsribeiro.desafio.service.ProductService;
 
 @RestController
