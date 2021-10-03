@@ -30,21 +30,25 @@ public class ProductService {
 				.collect(Collectors.toList());
 	}
 
-	public Product toSave(ProductFormDto dto) {
+	public ProductDto toSave(ProductFormDto dto) {
 		Product p = modelMapper.map(dto, Product.class);
-		return productRepository.save(p);
+		return modelMapper.map(productRepository.save(p),ProductDto.class);
 		
 	}
 	
 	
-	public Optional<Product> toFindById(String id) {
-		return productRepository.findById(id);
+	public Optional<ProductDto> toFindById(String id) {
+		Optional<Product> op = productRepository.findById(id);
+		if(op.isEmpty()) {
+			return Optional.empty();
+		}
+		return Optional.of(modelMapper.map(op.get(),ProductDto.class));
 	}
 	
-	public Optional<Product> toUpdateById(ProductFormDto dto, String id ){
+	public Optional<ProductDto> toUpdateById(ProductFormDto dto, String id ){
 		Product p = modelMapper.map(dto, Product.class);
 		p.setId(id);
-		return Optional.of(productRepository.save(p));
+		return Optional.of(modelMapper.map(productRepository.save(p),ProductDto.class));
 	}
 	
 	public void toDeleteById(String id){

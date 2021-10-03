@@ -34,24 +34,24 @@ public class ProductController {
 	}
 
 	@PostMapping("/products")
-	public ResponseEntity<Product> toSave(@RequestBody @Valid ProductFormDto dto) {
+	public ResponseEntity<ProductDto> toSave(@RequestBody @Valid ProductFormDto dto) {
 		return ResponseEntity.created(null).body(service.toSave(dto));
 
 	}
 
 	@GetMapping("/products/{id}")
-	public ResponseEntity<Product> toFindById(@PathVariable String id) {
-		Optional<Product> response = service.toFindById(id);
+	public ResponseEntity<ProductDto> toFindById(@PathVariable String id) {
+		Optional<ProductDto> response = service.toFindById(id);
 		if (response.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		} else {
-			return ResponseEntity.created(null).body(response.get());
+			return ResponseEntity.ok().body(response.get());
 		}
 	}
 
 	@PutMapping("/products/{id}")
-	public ResponseEntity<Product> toUpdateById(@RequestBody @Valid ProductFormDto dto, @PathVariable String id) {
-		Optional<Product> response = service.toFindById(id);
+	public ResponseEntity<ProductDto> toUpdateById(@RequestBody @Valid ProductFormDto dto, @PathVariable String id) {
+		Optional<ProductDto> response = service.toFindById(id);
 		if (response.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		} else {
@@ -61,7 +61,7 @@ public class ProductController {
 
 	@DeleteMapping("/products/{id}")
 	public ResponseEntity<String> toDeleteById(@PathVariable String id) {
-		Optional<Product> response = service.toFindById(id);
+		Optional<ProductDto> response = service.toFindById(id);
 		if (response.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		} else {
@@ -74,7 +74,6 @@ public class ProductController {
 	public List<ProductDto> toListBySearch(@RequestParam(required = false, value = "q", defaultValue = "") String q,
 										   @RequestParam(required = false, value = "min_price",defaultValue = "0.00") BigDecimal minPrice,
 										   @RequestParam(required = false,  value = "max_price", defaultValue = "10000.00") BigDecimal maxPrice) {
-		System.out.println(q + minPrice + maxPrice);
-		return service.toListBySearch(q,minPrice,maxPrice);
+				return service.toListBySearch(q,minPrice,maxPrice);
 	}
 }
