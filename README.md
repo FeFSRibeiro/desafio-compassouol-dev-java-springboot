@@ -1,6 +1,45 @@
-# Instruções para executar a aplicação
+# Desafio CompassoUol Java com SringBoot
 
-## Pré Requisitos:
+Sua tarefa é implementar um catálogo de produtos com Java e Spring Boot.
+
+Neste microserviço deve ser possível criar, alterar, visualizar e excluir um determinado produto, além de visualizar a lista de produtos atuais disponíveis. 
+
+Também deve ser possível realizar a busca de produtos filtrando por name, description e price.
+
+
+## Tarefas executadas:
+
+* Criação de um produto - OK
+
+* Atualização de um produto - OK
+
+* Busca de um produto por ID - OK
+
+* Lista de produtos - OK
+
+* Lista de produtos filtrados - OK
+
+* Deleção de um produto - OK
+  
+* Expor na porta 9999 - OK
+
+* Testes unitários - OK
+
+* Erro 400 customizado (BadRequest) - OK
+  
+* Validações de campos durante criação e atualização de Produtos - OK
+
+* Método de entrega: Através de build utilizando Docker (DockerFile disponível na raiz do Projeto). - OK
+
+*  Documentação - OK
+
+
+
+
+
+## Instruções para executar a aplicação
+
+### Pré Requisitos:
 Docker (testado com versao v20.10.7 para Windows com WSL2)
 
 Internet
