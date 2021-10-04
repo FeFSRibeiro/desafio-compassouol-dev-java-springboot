@@ -29,9 +29,11 @@ Também deve ser possível realizar a busca de produtos filtrando por name, desc
   
 * Validações de campos durante criação e atualização de Produtos - OK
 
-* Método de entrega: Através de build utilizando Docker (DockerFile disponível na raiz do Projeto). - OK
+* Método de entrega: Através de build utilizando Docker (DockerFile localizado na raiz do Projeto). - OK
 
 *  Documentação - OK
+
+*  Postman, contendo as principais interações com a Api (Pasta postman localizada na raiz do Projeto) - OK
 
 
 
@@ -44,11 +46,11 @@ Docker (testado com versao v20.10.7 para Windows com WSL2)
 
 Internet
 
-**1) Na raiz do projeto, executar:**
+**1) Na raiz do projeto, executar no Terminal:**
 ```
 docker build -t desafio .
 ```
-**2)Após finalização, executar o comando abaixo e mapear a porta 9999**
+**2)Após finalização, executar o comando abaixo para iniciar o container e mapear a porta 9999**
 
 #### Modo interativo #### 
 ```

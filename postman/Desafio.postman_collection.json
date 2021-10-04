@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "92dc29b7-eb01-438b-bc31-035452153b1c",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9999/products/e408fc2d-273b-4cf8-a99a-6eebb48e7eb1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"name\": \"Roupa Manga Longa\",\r\n    \"description\": \"Frio\",\r\n    \"price\": 100.00\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/products/f7409e37-b9c9-4e9f-a775-ad44e56f4b5e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"products",
+						"f7409e37-b9c9-4e9f-a775-ad44e56f4b5e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/products/7b8479bd-1c2d-4e7e-916a-bea4bf366d7e",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/products/59525ccd-4fb5-459b-848f-d39f1752a479",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"products",
+						"59525ccd-4fb5-459b-848f-d39f1752a479"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"name\": \"Roupa\",\r\n    \"description\": \"Verao\",\r\n    \"price\": 50.00\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/products/e408fc2d-273b-4cf8-a99a-6eebb48e7eb1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/products/e408fc2d-273b-4cf8-a99a-6eebb48e7eb1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"products",
+						"e408fc2d-273b-4cf8-a99a-6eebb48e7eb1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/products/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/products/search?q=Roupa&min_price=10.00&max_price=79.90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Roupa"
+						},
+						{
+							"key": "min_price",
+							"value": "10.00"
+						},
+						{
+							"key": "max_price",
+							"value": "79.90"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
